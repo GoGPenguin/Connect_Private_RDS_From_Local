@@ -41,19 +41,6 @@
                 href="/2-create-aws-resources/2-ec2/"
                 />
   </url><url>
-    <loc>/2-create-aws-resources/</loc>
-    <lastmod>1970-01-01T07:33:44+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-create-aws-resources/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-create-aws-resources/"
-                />
-  </url><url>
     <loc>/2-create-aws-resources/3-rds/</loc>
     <lastmod>1970-01-01T07:33:44+07:00</lastmod>
     <xhtml:link
@@ -65,6 +52,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="/2-create-aws-resources/3-rds/"
+                />
+  </url><url>
+    <loc>/2-create-aws-resources/</loc>
+    <lastmod>1970-01-01T07:33:44+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-create-aws-resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-create-aws-resources/"
                 />
   </url><url>
     <loc>/3-connect-to-rds/</loc>

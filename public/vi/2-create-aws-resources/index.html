@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo các tài nguyên cần thiết :: Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
+    <title>Tạo RDS :: Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724689917" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724689917" rel="stylesheet">
-    <link href="/css/hybrid.css?1724689917" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724689917" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724689917" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724689917" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724689917" rel="stylesheet">
-    <link href="/css/theme.css?1724689917" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724689917" rel="stylesheet">
+    <link href="/css/nucleus.css?1724690638" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724690638" rel="stylesheet">
+    <link href="/css/hybrid.css?1724690638" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724690638" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724690638" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724690638" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724690638" rel="stylesheet">
+    <link href="/css/theme.css?1724690638" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724690638" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724689917" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724690638" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724689917"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724690638"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724689917"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724689917"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724690638"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724690638"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724689917"></script>
+<script type="text/javascript" src="/js/search.js?1724690638"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/vi/2-create-aws-resources/" title="Tạo các tài nguyên cần thiết" class="dd-item 
+    <li data-nav-id="/vi/2-create-aws-resources/" title="Tạo RDS" class="dd-item 
         
         active
         
         ">
       <a href="/vi/2-create-aws-resources/">
-          <b>2. </b>Tạo các tài nguyên cần thiết
+          <b>2.3. </b>Tạo RDS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -395,7 +395,7 @@
             
           
           
-            <a href='/vi/'>Kết nối RDS từ máy tính local thông qua EC2 với Session Manager</a> > Tạo các tài nguyên cần thiết
+            <a href='/vi/'>Kết nối RDS từ máy tính local thông qua EC2 với Session Manager</a> > Tạo RDS
           
         
           
@@ -430,7 +430,7 @@
           
             <h1>
               
-              Tạo các tài nguyên cần thiết
+              Tạo RDS
             </h1>
           
 
@@ -438,18 +438,42 @@
 
 
 
-	<p>Trong bước này bạn tạo các tài nguyên cần thiết cho bài lab:<br>
-Một là <strong>VPC</strong> và các tài nguyên liên quan (Subnet, Internet Gateway, Security Group).<br>
-Hai là <strong>EC2</strong>, các package cần thiết và IAM Role cho phép Session Manager quản lý được EC2.<br>
-Ba là <strong>RDS</strong>.</p>
-<h4 id="nội-dung">Nội Dung</h4>
+	
+<div class="notices note" ><p>Phần này chúng ta sẽ khởi tạo Postgre RDS ở private subnet</p>
+</div>
+
+<h4 id="các-bước-tiến-hành">Các bước tiến hành</h4>
 <ol>
-<li><a href="/vi/2-create-aws-resources/1-vpc-and-more/">Tạo VPC và các tài nguyên liên quan</a></li>
-<li><a href="/vi/2-create-aws-resources/2-ec2/">Khởi tạo EC2 Instance</a></li>
-<li><a href="/vi/2-create-aws-resources/3-rds/">Khởi tạo RDS</a></li>
+<li>Trên thanh tìm kiếm tìm dịch vụ <strong>RDS</strong> và chọn để vào giao diện dashboard:
+<img alt="DB SG" src="/images/3-RDS/rds_console.jpg"></li>
+<li>Chọn Subnets groups ở sidebar và nhấn <strong>Create DB subnet group</strong>
+<img alt="DB SG" src="/images/3-RDS/rds_subnet_gr.jpg"></li>
+<li>Điền các thông tin cần thiết, chọn VPC và <strong>private subnet</strong> sau đó nhấn <strong>Create</strong>
+<img alt="DB SG" src="/images/3-RDS/rds_subnet_gr_create.jpg"></li>
 </ol>
-<h4 id="kiến-trúc-tổng-quan">Kiến trúc tổng quan</h4>
-<p><img alt="Image" src="../../images/WorkShop_000001_Infra.drawio.png"></p>
+<p>
+<div class="notices note" ><p>Nhớ điền description nếu không sẽ báo lỗi</p>
+</div>
+
+Tạo thành công DB subnet group
+<img alt="DB SG" src="/images/3-RDS/rds_subnet_gr_success.jpg"> 4. Chọn <strong>Databases</strong> ở sidebar và nhấn <strong>Create database</strong> để tạo RDS<br>
+<em>Thực hiện theo các bước (optional)</em>
+<img alt="DB SG" src="/images/3-RDS/db_console.jpg">
+<img alt="DB SG" src="/images/3-RDS/db_engine_opt.jpg">
+<img alt="DB SG" src="/images/3-RDS/db_general_setting.jpg">
+<img alt="DB SG" src="/images/3-RDS/db_default_1.jpg">
+<img alt="DB SG" src="/images/3-RDS/db_connect_setting_01.jpg">
+<img alt="DB SG" src="/images/3-RDS/db_connect_setting_02.jpg">
+
+<div class="notices warning" ><p>Nhớ xem kỹ phần tính tiền trước khi tạo</p>
+</div>
+
+<img alt="DB SG" src="/images/3-RDS/costs.jpg">
+Xem lại thông tin và nhấn <strong>Create database</strong>:
+Đợi 1 lúc để RDS có thể tạo thành công, sau đó <strong>Lưu lại RDS endpoint</strong> để dùng cho kết nối.
+<img alt="DB SG" src="/images/3-RDS/rds_waiting_create.jpg">
+<img alt="DB SG" src="/images/3-RDS/rds_endpoint.jpg">
+Đã khởi tạo xong RDS.</p>
 
 
 
@@ -628,19 +652,19 @@ Ba là <strong>RDS</strong>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724689917"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724689917"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724689917"></script>
-    <script src="/js/jquery.sticky.js?1724689917"></script>
-    <script src="/js/featherlight.min.js?1724689917"></script>
-    <script src="/js/highlight.pack.js?1724689917"></script>
+    <script src="/js/clipboard.min.js?1724690638"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724690638"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724690638"></script>
+    <script src="/js/jquery.sticky.js?1724690638"></script>
+    <script src="/js/featherlight.min.js?1724690638"></script>
+    <script src="/js/highlight.pack.js?1724690638"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724689917"></script>
-    <script src="/js/learn.js?1724689917"></script>
-    <script src="/js/hugo-learn.js?1724689917"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724690638"></script>
+    <script src="/js/learn.js?1724690638"></script>
+    <script src="/js/hugo-learn.js?1724690638"></script>
 
-    <link href="/mermaid/mermaid.css?1724689917" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724689917"></script>
+    <link href="/mermaid/mermaid.css?1724690638" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724690638"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
