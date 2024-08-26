@@ -19,4 +19,4 @@ Ba là **RDS**.
 
 #### Kiến trúc tổng quan
 
-![Image](/images/WorkShop_000001_Infra.drawio.png)
+![Image](../../images/WorkShop_000001_Infra.drawio.png)

@@ -19,4 +19,4 @@ Third, you will set up the **RDS** service.
 
 #### Infrastructure
 
-![Image](/images/WorkShop_000001_Infra.drawio.png)
+![Image](../images/WorkShop_000001_Infra.drawio.png)
