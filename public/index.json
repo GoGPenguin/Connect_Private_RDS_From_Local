@@ -1,69 +1,69 @@
 [
 {
-	"uri": "//localhost:1313/2-create-aws-resources/1-vpc-and-more/",
+	"uri": "/2-create-aws-resources/1-vpc-and-more/",
 	"title": "Create VPC and Related Resources",
 	"tags": [],
 	"description": "",
 	"content": "\rAccording to the architecture overview and guide, we will create a VPC with 2 Availability Zones (AZ) and 4 Subnets. However, you can create 1 AZ with 2 Subnets (1 public for EC2 and 1 private for RDS).\nCONTENT CONTENT Create VPC Create Subnets Create Internet Gateway Create Security Groups Create Route Table Create VPC Search for VPC in the search bar and select the VPC service. The VPC Dashboard will appear: Select Your VPCs to enter the VPC management screen:\nCurrently, no VPCs have been created.\nClick Create VPC Choose VPC Only, fill in the details as shown, and then select Create VPC You will see the VPC has been successfully created.\nCreate Subnets Select Subnets in the VPC Dashboard sidebar to enter the subnet management screen, and click Create subnet: Select the VPC and enter/select the necessary details (name, AZ, CIDR block): Example details for a public subnet in AZ ap-southeast-1a For the following subnets, change the AZ information (you can customize it), for example:\nName: public_subnet_2, AZ: ap-southeast-1b, CIDR: 10.0.1.0/24\nName: private_subnet_1, AZ: ap-southeast-1a, CIDR: 10.0.2.0/24**\nName: private_subnet_2, AZ: ap-southeast-1b, CIDR: 10.0.3.0/24**\nAfter reviewing, click Create subnet to successfully create it.\nCreate Internet Gateway An IGW (Internet Gateway) is a resource that allows access to the internet.\nSelect Internet gateways in the VPC Dashboard sidebar to enter the IGW management screen, and click Create internet gateway: Name it and click Create internet gateway to successfully create it: View the information about the newly created IGW, click Attach to VPC to attach the IGW to the previously created VPC: Click Attach internet gateway to successfully attach it to the VPC. Create Security Groups Continue by selecting Security groups in the sidebar to enter the Security Group management screen, then click Create security group: Name it, select the created VPC, and set up inbound rules for the Public Security Group for the Public Subnet: Similarly, change only the inbound rules for the Private Security Group for the Private Subnet: Create Route Table Select Route tables in the VPC Dashboard sidebar to enter the Route Table management screen, and click Create route table: Create a Public route table: Click Create route table Edit the public route to enable internet routing (Select the route table to edit and choose the Routes section)\nClick Save changes. In this lab, there is no need to create a private route table for the private subnet.\n"
 },
 {
-	"uri": "//localhost:1313/1-prerequisites/",
+	"uri": "/1-prerequisites/",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
 	"content": "Content:\nHave an AWS Account Use an IAM Account for the Lab (Recommended) AWS CLI Installed MobaXTerm Installed Install Laragon or other SQL UI software (XAMPP, etc.) depending on the database you choose Have an AWS Account Go to the Amazon Web Service homepage. Click on Sign In to the Console at the top right corner. Note: You may need to click Create an AWS Account instead. Enter your account information and select Continue. Important: Make sure to enter accurate information, especially your email address. Choose your account type. Note: Both Personal and Professional accounts have the same features. Enter your company or personal information. Read and agree to the AWS Customer Agreement. Select Create Account and Continue. Use an IAM Account for the Lab (Recommended) If you are already using an IAM Account, you can skip this step.\nIn the search bar, type IAM and select IAM, then go to Users. If the User does not exist, select Create user. Enter the information, check the box Provide user access to the AWS Management Console - optional, and then click Next. In the Attach policies directly section, search for *AdministratorAccess and select it, then continue with Next. Review the information and click Create user. Obtain the account details, password, and Console sign-in URL (you may save this information) and use these credentials to log in with the IAM User. Create an Access key for the user to enable CLI login. (Select the user, go to the Access key section in Security credentials)\nAWS CLI Installed Installation and setup guide: Install AWS CLI\nMobaXTerm Installed Install Laragon or other SQL UI software (XAMPP, etc.) depending on the database you choose "
 },
 {
-	"uri": "//localhost:1313/2-create-aws-resources/2-ec2/",
+	"uri": "/2-create-aws-resources/2-ec2/",
 	"title": "Create EC2 and IAM Role for Session Manager Management",
 	"tags": [],
 	"description": "",
 	"content": "\rThis section involves two steps: first, creating an EC2 instance in the public subnet and installing the necessary packages, and second, creating an IAM Role to attach to the EC2 instance, allowing Session Manager to manage it.\nCreate EC2 Create IAM Role Check in Session Manager Create EC2 In the search bar, type EC2 and select it to access the EC2 management screen. Then click Launch instances to start creating the instance. Follow these steps to configure the EC2 instance:\nSelect the OS configuration Create a key pair for SSH Save the key pair to SSH into the EC2 instance.\nConfigure the network settings for EC2 The EC2 instance is in the public subnet, with the public security group attached.\nAfter completing the steps above, review the information and click Launch instance to create it. Details of the EC2 instance Use MobaXTerm to test the SSH connection to the newly created EC2 instance. Install the amazon-ssm-agent using the following command:\nsudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm\nSince we will create a PostgreSQL RDS in this lab, install the PostgreSQL client:\nsudo dnf install postgresql15.x86_64 -y\nCreate IAM Role In the details of the EC2 instance created above, you\u0026rsquo;ll notice the IAM Role section is still empty. Now, we\u0026rsquo;ll create an IAM Role.\nGo to IAM, select Role, then click Create role. Follow the instructions and click Next. Continue with Next. Name the role and review before clicking Create role. The IAM Role that allows EC2 to be managed by Session Manager is now successfully created. Go back to EC2. Select the EC2 instance you want to manage, right-click, and choose Modify IAM role. Select the role you just created and click Update IAM role. Successfully updated the IAM Role for the EC2 instance. Check in Session Manager In the search bar, type Session Manager, then click Start session. If the EC2 instance has the appropriate permissions and the SSM-Agent installed, it will appear in the list for management. "
 },
 {
-	"uri": "//localhost:1313/2-create-aws-resources/",
+	"uri": "/2-create-aws-resources/",
 	"title": "Create Necessary Resources",
 	"tags": [],
 	"description": "",
 	"content": "In this step, you will create the necessary resources for the lab.\nFirst, you will create a VPC and related resources (Subnet, Internet Gateway, Security Group).\nSecond, you will create an EC2 instance, install necessary packages, and assign an IAM Role that allows Session Manager to manage the EC2 instance.\nThird, you will set up the RDS service.\nContent Create VPC and Related Resources Launch EC2 Instance Set Up RDS Infrastructure "
 },
 {
-	"uri": "//localhost:1313/2-create-aws-resources/3-rds/",
+	"uri": "/2-create-aws-resources/3-rds/",
 	"title": "Create RDS",
 	"tags": [],
 	"description": "",
 	"content": "\rIn this section, we will create a PostgreSQL RDS in the private subnet.\nSteps to Follow In the search bar, type RDS and select it to access the dashboard: Select Subnet Groups from the sidebar and click Create DB subnet group. Fill in the necessary details, select the VPC and private subnet, then click Create. Remember to fill in the description; otherwise, you\u0026rsquo;ll get an error.\nThe DB subnet group is created successfully. 4. Select Databases from the sidebar and click Create database to create the RDS instance.\nProceed with the steps (optional): Be sure to review the cost details before creating the RDS instance.\nReview the information and click Create database: Wait a moment for the RDS instance to be created successfully, then Save the RDS endpoint for use in the connection. RDS has been successfully created.\n"
 },
 {
-	"uri": "//localhost:1313/3-connect-to-rds/",
+	"uri": "/3-connect-to-rds/",
 	"title": "Connect to RDS from Local Machine through EC2",
 	"tags": [],
 	"description": "",
 	"content": "In this step, we will connect to the RDS on AWS from a personal (local) computer.\nVerify the connection from EC2 to RDS:\nSSH into the EC2 instance and check if ssm-agent and postgres-client are installed. Test the connection to RDS using the command:\npsql -h \u0026lt;rds-endpoint\u0026gt; -U \u0026lt;username\u0026gt; --password Enter the password set during RDS creation. If successful, you will see the following screen: Use cmd, PowerShell, or Git Bash to log in to the AWS account using the Access key (the .pem file) created and saved earlier in the guide.\nUse port forwarding to open a local port that connects to the RDS through EC2 with the following command:\naws ssm start-session --region \u0026lt;resources-region\u0026gt; --target \u0026lt;ec2-instance-id\u0026gt; ^\n--document-name AWS-StartPortForwardingSessionToRemoteHost --parameters host=\u0026quot;\u0026lt;rds-endpoint\u0026gt;\u0026quot;,portNumber=\u0026quot;\u0026lt;rds-port-number\u0026gt;\u0026quot;,localPortNumber=\u0026quot;\u0026lt;local-port-number\u0026gt;\u0026quot; The four lines above form a single command.\nSeeing Waiting to connect indicates that the RDS is ready to connect. Some terminals may not show Waiting to connect, but the connection can still be successful.\nOpen Laragon and select/enter the information to connect to the RDS. Then click Open.\nLaragon dashboard: Connection settings: The username and password are the credentials used when creating the RDS. The port is the local port that was opened for the connection.\rThe terminal will display a successful connection to the RDS from the local machine. A user interface will appear upon success, allowing you to run queries. We have now completed the lab to connect to RDS from a local machine via EC2 and Session Manager.\n"
 },
 {
-	"uri": "//localhost:1313/4-clean-resources/",
+	"uri": "/4-clean-resources/",
 	"title": "Clean Up Resources",
 	"tags": [],
 	"description": "",
 	"content": " Delete RDS Delete EC2 Delete VPC Delete RDS Go to the RDS service, select the RDS instance you want to delete, choose Actions, and then select Delete. Wait a moment for the RDS to be completely deleted. Delete EC2 Go to the EC2 service, select the EC2 instance you want to delete, choose Instance state, and then select Terminate (delete) instance. Wait a moment for the EC2 instance to be completely deleted. Delete VPC Go to the VPC service, select the VPC you want to delete, choose Actions, and then select Delete VPC. If the VPC cannot be deleted due to dependent resources, delete those dependent resources first, then try deleting the VPC again.\n"
 },
 {
-	"uri": "//localhost:1313/",
+	"uri": "/",
 	"title": "Connecting to RDS via EC2 with Session Manager",
 	"tags": [],
 	"description": "",
 	"content": "Connecting to RDS via EC2 Overview In this lab, you will connect to an RDS in a private subnet through an EC2 instance in a public subnet using Session Manager.\nRDS (Relational Database Service) RDS is a managed relational database service by AWS. It helps you easily set up, operate, and scale relational databases in the cloud.\nWith RDS, you can use popular database engines such as MySQL, PostgreSQL, MariaDB, Oracle Database, and Microsoft SQL Server.\nEC2 (Elastic Compute Cloud) EC2 is a cloud computing service by AWS that allows you to create and manage virtual servers (instances) in the cloud. With EC2, you can easily scale up or down your computing resources based on demand, without the need for physical hardware investment.\nSession Manager Session Manager is a session management tool within AWS Systems Manager, enabling you to remotely manage and access EC2 instances without opening SSH or RDP ports.\nSession Manager is a secure and efficient solution for managing instances in an AWS environment.\nMain Content Prerequisites Create AWS Resources Connect to RDS Clean Up Resources "
 },
 {
-	"uri": "//localhost:1313/categories/",
+	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/tags/",
+	"uri": "/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

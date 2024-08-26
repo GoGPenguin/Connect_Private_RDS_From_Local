@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.132.2">
@@ -12,21 +12,21 @@
     <title>Create VPC and Related Resources :: Connecting to RDS via EC2 with Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724684612" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724684612" rel="stylesheet">
-    <link href="/css/hybrid.css?1724684612" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724684612" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724684612" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724684612" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724684612" rel="stylesheet">
-    <link href="/css/theme.css?1724684612" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724684612" rel="stylesheet">
+    <link href="/css/nucleus.css?1724689075" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724689075" rel="stylesheet">
+    <link href="/css/hybrid.css?1724689075" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724689075" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724689075" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724689075" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724689075" rel="stylesheet">
+    <link href="/css/theme.css?1724689075" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724689075" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724684612" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724689075" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724684612"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724689075"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724684612"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724684612"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724689075"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724689075"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724684612"></script>
+<script type="text/javascript" src="/js/search.js?1724689075"></script>
 
     
   </div>
@@ -298,7 +298,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/2-create-aws-resources/1-vpc-and-more/" selected>English</option>
+                      <option id="en" value="/2-create-aws-resources/1-vpc-and-more/" selected>English</option>
                     
                   
               
@@ -312,7 +312,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/2-create-aws-resources/1-vpc-and-more/">Tiếng Việt</option>
+                      <option id="vi" value="/vi/2-create-aws-resources/1-vpc-and-more/">Tiếng Việt</option>
                     
                   
               
@@ -464,28 +464,28 @@
 <ol>
 <li>
 <p>Search for VPC in the search bar and select the <strong>VPC</strong> service. The VPC Dashboard will appear:
-<img alt="VPC Dashboard" src="../../images/1-VPC-And-More/vpc_console.jpg?width=1200px"></p>
+<img alt="VPC Dashboard" src="/images/1-VPC-And-More/vpc_console.jpg?width=1200px"></p>
 </li>
 <li>
 <p>Select <strong>Your VPCs</strong> to enter the VPC management screen:<br>
 <em>Currently, no VPCs have been created.</em><br>
 Click <strong>Create VPC</strong>
-<img alt="VPC Manage" src="../../images/1-VPC-And-More/vpc_dashboard.jpg?width=1200px"></p>
+<img alt="VPC Manage" src="/images/1-VPC-And-More/vpc_dashboard.jpg?width=1200px"></p>
 </li>
 <li>
 <p>Choose VPC Only, fill in the details as shown, and then select <strong>Create VPC</strong>
-<img alt="VPC Manage" src="../../images/1-VPC-And-More/vpc_create.jpg?width=1000px"></p>
+<img alt="VPC Manage" src="/images/1-VPC-And-More/vpc_create.jpg?width=1000px"></p>
 </li>
 </ol>
 <p>You will see the VPC has been successfully created.</p>
 <h4 id="create-subnets">Create Subnets</h4>
 <ol>
 <li>Select <strong>Subnets</strong> in the VPC Dashboard sidebar to enter the subnet management screen, and click <strong>Create subnet</strong>:
-<img alt="Subnets Manage" src="../../images/1-VPC-And-More/subnet_console.jpg?width=1400px"></li>
+<img alt="Subnets Manage" src="/images/1-VPC-And-More/subnet_console.jpg?width=1400px"></li>
 <li>Select the VPC and enter/select the necessary details (name, AZ, CIDR block):</li>
 </ol>
 <p><strong><em>Example details for a public subnet in AZ ap-southeast-1a</em></strong>
-<img alt="Subnets Manage" src="../../images/1-VPC-And-More/subnet_01.jpg?width=1400px"></p>
+<img alt="Subnets Manage" src="/images/1-VPC-And-More/subnet_01.jpg?width=1400px"></p>
 
 <div class="notices note" ><p>For the following subnets, change the AZ information (<strong>you can customize it</strong>), for example:<br>
 <strong>Name:</strong> public_subnet_2, <strong>AZ:</strong> ap-southeast-1b, <strong>CIDR:</strong> 10.0.1.0/24<br>
@@ -501,33 +501,33 @@ Click <strong>Create VPC</strong>
 
 <ol>
 <li>Select <strong>Internet gateways</strong> in the VPC Dashboard sidebar to enter the IGW management screen, and click <strong>Create internet gateway</strong>:
-<img alt="IGW Console" src="../../images/1-VPC-And-More/igw_console.jpg?width=1400px"></li>
+<img alt="IGW Console" src="/images/1-VPC-And-More/igw_console.jpg?width=1400px"></li>
 <li>Name it and click <strong>Create internet gateway</strong> to successfully create it:
-<img alt="IGW Console" src="../../images/1-VPC-And-More/create_igw.jpg?width=1400px"></li>
+<img alt="IGW Console" src="/images/1-VPC-And-More/create_igw.jpg?width=1400px"></li>
 <li>View the information about the newly created IGW, click <strong>Attach to VPC</strong> to attach the IGW to the previously created VPC:
-<img alt="IGW Console" src="../../images/1-VPC-And-More/igw_detail.jpg?width=1400px">
-<img alt="IGW Console" src="../../images/1-VPC-And-More/attach_igw_to_vpc.jpg?width=1400px">
+<img alt="IGW Console" src="/images/1-VPC-And-More/igw_detail.jpg?width=1400px">
+<img alt="IGW Console" src="/images/1-VPC-And-More/attach_igw_to_vpc.jpg?width=1400px">
 Click <strong>Attach internet gateway</strong> to successfully attach it to the VPC.</li>
 </ol>
 <h4 id="create-security-groups">Create Security Groups</h4>
 <ol>
 <li>Continue by selecting <strong>Security groups</strong> in the sidebar to enter the Security Group management screen, then click <strong>Create security group</strong>:
-<img alt="SG Console" src="../../images/1-VPC-And-More/sgs_console.jpg?width=1400px"></li>
+<img alt="SG Console" src="/images/1-VPC-And-More/sgs_console.jpg?width=1400px"></li>
 <li>Name it, select the created VPC, and set up inbound rules for the <em>Public Security Group</em> for the Public Subnet:
-<img alt="SG Console" src="../../images/1-VPC-And-More/public_sgs_detail.jpg?width=1400px"></li>
+<img alt="SG Console" src="/images/1-VPC-And-More/public_sgs_detail.jpg?width=1400px"></li>
 <li>Similarly, change only the inbound rules for the <em>Private Security Group</em> for the Private Subnet:
-<img alt="SG Console" src="../../images/1-VPC-And-More/private_sgs_detail.jpg?width=1400px"></li>
+<img alt="SG Console" src="/images/1-VPC-And-More/private_sgs_detail.jpg?width=1400px"></li>
 </ol>
 <h4 id="create-route-table">Create Route Table</h4>
 <ol>
 <li>Select <strong>Route tables</strong> in the VPC Dashboard sidebar to enter the Route Table management screen, and click <strong>Create route table</strong>:
-<img alt="Route table Manage" src="../../images/1-VPC-And-More/route_table_console.jpg?width=1400px"></li>
+<img alt="Route table Manage" src="/images/1-VPC-And-More/route_table_console.jpg?width=1400px"></li>
 <li>Create a Public route table:
-<img alt="Route table Manage" src="../../images/1-VPC-And-More/create_public_route.jpg?width=1400px">
+<img alt="Route table Manage" src="/images/1-VPC-And-More/create_public_route.jpg?width=1400px">
 Click <strong>Create route table</strong>
-<img alt="Route table Manage" src="../../images/1-VPC-And-More/public_route_detail.jpg?width=1400px">
+<img alt="Route table Manage" src="/images/1-VPC-And-More/public_route_detail.jpg?width=1400px">
 Edit the public route to enable internet routing (Select the route table to edit and choose the <strong>Routes</strong> section)<br>
-<img alt="Route table Manage" src="../../images/1-VPC-And-More/public_route_igw.jpg?width=1400px">
+<img alt="Route table Manage" src="/images/1-VPC-And-More/public_route_igw.jpg?width=1400px">
 Click <strong>Save changes</strong>.</li>
 </ol>
 
@@ -713,19 +713,19 @@ Click <strong>Save changes</strong>.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724684612"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724684612"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724684612"></script>
-    <script src="/js/jquery.sticky.js?1724684612"></script>
-    <script src="/js/featherlight.min.js?1724684612"></script>
-    <script src="/js/highlight.pack.js?1724684612"></script>
+    <script src="/js/clipboard.min.js?1724689075"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724689075"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724689075"></script>
+    <script src="/js/jquery.sticky.js?1724689075"></script>
+    <script src="/js/featherlight.min.js?1724689075"></script>
+    <script src="/js/highlight.pack.js?1724689075"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724684612"></script>
-    <script src="/js/learn.js?1724684612"></script>
-    <script src="/js/hugo-learn.js?1724684612"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724689075"></script>
+    <script src="/js/learn.js?1724689075"></script>
+    <script src="/js/hugo-learn.js?1724689075"></script>
 
-    <link href="/mermaid/mermaid.css?1724684612" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724684612"></script>
+    <link href="/mermaid/mermaid.css?1724689075" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724689075"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

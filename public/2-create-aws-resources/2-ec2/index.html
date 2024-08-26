@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.132.2">
@@ -12,21 +12,21 @@
     <title>Create EC2 and IAM Role for Session Manager Management :: Connecting to RDS via EC2 with Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724684628" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724684628" rel="stylesheet">
-    <link href="/css/hybrid.css?1724684628" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724684628" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724684628" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724684628" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724684628" rel="stylesheet">
-    <link href="/css/theme.css?1724684628" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724684628" rel="stylesheet">
+    <link href="/css/nucleus.css?1724689075" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724689075" rel="stylesheet">
+    <link href="/css/hybrid.css?1724689075" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724689075" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724689075" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724689075" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724689075" rel="stylesheet">
+    <link href="/css/theme.css?1724689075" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724689075" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724684628" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724689075" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724684628"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724689075"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724684628"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724684628"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724689075"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724689075"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724684628"></script>
+<script type="text/javascript" src="/js/search.js?1724689075"></script>
 
     
   </div>
@@ -298,7 +298,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/2-create-aws-resources/2-ec2/" selected>English</option>
+                      <option id="en" value="/2-create-aws-resources/2-ec2/" selected>English</option>
                     
                   
               
@@ -312,7 +312,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1313/vi/2-create-aws-resources/2-ec2/">Tiếng Việt</option>
+                      <option id="vi" value="/vi/2-create-aws-resources/2-ec2/">Tiếng Việt</option>
                     
                   
               
@@ -456,31 +456,31 @@
 <h4 id="create-ec2">Create EC2</h4>
 <ol>
 <li>In the search bar, type <strong>EC2</strong> and select it to access the EC2 management screen. Then click <strong>Launch instances</strong> to start creating the instance.
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_console.jpg"></li>
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_console.jpg"></li>
 <li>Follow these steps to configure the EC2 instance:<br>
 <em>Select the OS configuration</em>
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_name_OS.jpg">
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_name_OS.jpg">
 <em>Create a key pair for SSH</em>
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_keypair.jpg">
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_keypair.jpg">
 
 <div class="notices warning" ><p>Save the key pair to SSH into the EC2 instance.</p>
 </div>
 
 <em>Configure the network settings for EC2</em>
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_network_setting.jpg">
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_network_setting.jpg">
 
 <div class="notices note" ><p>The EC2 instance is in the public subnet, with the public security group attached.</p>
 </div>
 </li>
 </ol>
 <p>After completing the steps above, review the information and click <strong>Launch instance</strong> to create it.
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_create_success.jpg">
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_create_success.jpg">
 <strong>Details of the EC2 instance</strong>
-<img alt="EC2 Dashboard" src="../../images/2-EC2/ec2_detail.jpg"></p>
+<img alt="EC2 Dashboard" src="/images/2-EC2/ec2_detail.jpg"></p>
 <ol start="3">
 <li>
 <p>Use MobaXTerm to test the SSH connection to the newly created EC2 instance.
-<img alt="EC2 Dashboard" src="../../images/2-EC2/MobaXTerm.jpg"></p>
+<img alt="EC2 Dashboard" src="/images/2-EC2/MobaXTerm.jpg"></p>
 </li>
 <li>
 <p>Install the amazon-ssm-agent using the following command:<br>
@@ -499,26 +499,26 @@
 <ol>
 <li>Go to IAM, select Role, then click <strong>Create role</strong>.</li>
 <li>Follow the instructions and click <strong>Next</strong>.</li>
-<li><img alt="IAM Dashboard" src="../../images/2-EC2/iam_ec2_role.jpg"></li>
+<li><img alt="IAM Dashboard" src="/images/2-EC2/iam_ec2_role.jpg"></li>
 <li>Continue with <strong>Next</strong>.
-<img alt="IAM Dashboard" src="../../images/2-EC2/iam_ec2_role_permission.jpg"></li>
+<img alt="IAM Dashboard" src="/images/2-EC2/iam_ec2_role_permission.jpg"></li>
 <li>Name the role and review before clicking <strong>Create role</strong>.
-<img alt="IAM Dashboard" src="../../images/2-EC2/iam_ec2_role_review.jpg">
+<img alt="IAM Dashboard" src="/images/2-EC2/iam_ec2_role_review.jpg">
 The IAM Role that allows EC2 to be managed by Session Manager is now successfully created.
-<img alt="IAM Dashboard" src="../../images/2-EC2/iam_ec2_role_success.jpg"></li>
+<img alt="IAM Dashboard" src="/images/2-EC2/iam_ec2_role_success.jpg"></li>
 <li>Go back to EC2. Select the EC2 instance you want to manage, right-click, and choose <strong>Modify IAM role</strong>.
-<img alt="IAM Dashboard" src="../../images/2-EC2/ec2_modify_role_console.jpg"></li>
+<img alt="IAM Dashboard" src="/images/2-EC2/ec2_modify_role_console.jpg"></li>
 <li>Select the role you just created and click <strong>Update IAM role</strong>.
-<img alt="IAM Dashboard" src="../../images/2-EC2/ec2_modify_role_detail.jpg">
+<img alt="IAM Dashboard" src="/images/2-EC2/ec2_modify_role_detail.jpg">
 Successfully updated the IAM Role for the EC2 instance.
-<img alt="IAM Dashboard" src="../../images/2-EC2/ec2_modify_role_success.jpg"></li>
+<img alt="IAM Dashboard" src="/images/2-EC2/ec2_modify_role_success.jpg"></li>
 </ol>
 <h4 id="check-in-session-manager">Check in Session Manager</h4>
 <ol>
 <li>In the search bar, type Session Manager, then click <strong>Start session</strong>.
-<img alt="SSM Dashboard" src="../../images/2-EC2/system_manager_start.jpg"></li>
+<img alt="SSM Dashboard" src="/images/2-EC2/system_manager_start.jpg"></li>
 <li>If the EC2 instance has the appropriate permissions and the SSM-Agent installed, it will appear in the list for management.
-<img alt="SSM Dashboard" src="../../images/2-EC2/system_manager_sso_0_instances.jpg"></li>
+<img alt="SSM Dashboard" src="/images/2-EC2/system_manager_sso_0_instances.jpg"></li>
 </ol>
 
 
@@ -702,19 +702,19 @@ Successfully updated the IAM Role for the EC2 instance.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724684628"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724684628"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724684628"></script>
-    <script src="/js/jquery.sticky.js?1724684628"></script>
-    <script src="/js/featherlight.min.js?1724684628"></script>
-    <script src="/js/highlight.pack.js?1724684628"></script>
+    <script src="/js/clipboard.min.js?1724689075"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724689075"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724689075"></script>
+    <script src="/js/jquery.sticky.js?1724689075"></script>
+    <script src="/js/featherlight.min.js?1724689075"></script>
+    <script src="/js/highlight.pack.js?1724689075"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724684628"></script>
-    <script src="/js/learn.js?1724684628"></script>
-    <script src="/js/hugo-learn.js?1724684628"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724689075"></script>
+    <script src="/js/learn.js?1724689075"></script>
+    <script src="/js/hugo-learn.js?1724689075"></script>
 
-    <link href="/mermaid/mermaid.css?1724684628" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724684628"></script>
+    <link href="/mermaid/mermaid.css?1724689075" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724689075"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

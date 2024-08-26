@@ -1,69 +1,69 @@
 [
 {
-	"uri": "//localhost:1313/vi/2-create-aws-resources/1-vpc-and-more/",
+	"uri": "/vi/2-create-aws-resources/1-vpc-and-more/",
 	"title": "Tạo VPC và các tài nguyên liên quan",
 	"tags": [],
 	"description": "",
 	"content": "\rTheo tổng quan kiến trúc và hướng dẫn thì mình sẽ tạo VPC bao gồm 2 AZ và 4 Subnets nhưng các bạn có thể tạo 1 AZ và 2 Subnets (1 public cho EC2 và 1 private cho RDS)\nNỘI DUNG NỘI DUNG Tạo VPC Tạo Subnets Tạo Internet Gateway Tạo Security Groups Tạo Route Table Tạo VPC Tìm kiếm VPC trên thanh tìm kiếm và chọn vào dịch vụ VPC. Màn hình VPC Dashboard: Chọn Your VPCs để vào màn hình quản lý các VPCs:\nHiện tại chưa có VPC nào được tạo\nNhấn chọn Create VPC Chọn VPC Only và điền các thông tin như hình, sau đó chọn Create VPC Ra ngoài giao diện các bạn sẽ thấy đã tạo VPC thành công\nTạo Subnets Chọn mục Subnets ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn Create subnet: Chọn VPC và điền/chọn các thông tin cần thiết (name, AZ, CIDR block): Ví dụ thông tin của 1 public subnet ở AZ ap-southeast-1a Các subnet sau thay đổi thông tin của AZ (có thể tùy chỉnh), ví dụ:\nName: public_subnet_2, AZ: ap-southeast-1b, CIDR: 10.0.1.0/24\nName: private_subnet_1, AZ: ap-southeast-1a, CIDR: 10.0.2.0/24**\nName: private_subnet_2, AZ: ap-southeast-1b, CIDR: 10.0.3.0/24**\nSau khi review lại và nhấn Create subnet sẽ tạo thành công.\nTạo Internet Gateway IGW là tài nguyên cho phép truy cập ra ngoài internet.\nChọn mục Internet gateways ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn Create internet gateway: Đặt tên và nhấn Create internet gateway sẽ tạo thành công: Xem thông tin về IGW vừa tạo, nhấn Attach to VPC để gắn IGW vừa tạo vào VPC đã tạo trước đó: Nhấn Attach internet gateway sẽ gắn thành công vào VPC. Tạo Security Groups Tiếp tục chọn Security groups ở sidebar để vào màn hình quản lý Security group, sau đó nhấn chọn Create security group: Đặt tên, chọn VPC đã tạo và tạo inbound rules của Public Security Group cho Public Subnet: Tương tự, chỉ thay đổi inbounds rules với Private Security Group cho Private Subnet: Tạo Route Table Chọn mục Route tables ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn Create route table: Tạo Public route table: Nhấn Create route table Chỉnh sửa public route để có thể định tuyến ra internet (Chọn route table cần chỉnh sửa và chọn mục Routes)\nNhấn Save changes. Ở bài này chưa cần tạo private table cho private subnet\n"
 },
 {
-	"uri": "//localhost:1313/vi/1-prerequisites/",
+	"uri": "/vi/1-prerequisites/",
 	"title": "Yêu cầu",
 	"tags": [],
 	"description": "",
 	"content": "Nội dung:\nCó tài khoản AWS Sử dụng IAM Account để làm lab (Nên làm) Đã cài đặt AWS CLI Cài đặt MobaXTerm Cài đặt Laragon hoặc các phần mềm SQL UI (xampp,\u0026hellip; ) tùy theo cơ sở dữ liệu mình chọn Có tài khoản AWS Đi đến trang Amazon Web Service homepage. Chọn Sign In to the Console ở góc trên bên phải. Ghi Chú: Có thể là Create an AWS Account. Nhập thông tin tài khoảng và chọn Continue. Quan Trọng: Hãy chắc chắn bạn nhập đúng thông tin, đặc biệt là email. Chọn loại account. Ghi chú: Personal và Professional đều có chung tính năng. Nhập thông tin công ty hoặc thông tin cá nhân của bạn. Đọc và đồng ý AWS Customer Agreement. Chọn Create Account và Continue. Sử dụng IAM Account để làm lab (Nên làm) Nếu đã dùng IAM Account thì có thể bỏ qua bước này\nTrong thanh tìm kiếm gõ IAM và chọn IAM sau đó chọn vào Users. Nếu chưa tồn tại User thì chọn Create user Điền thông tin , chọn ô Provide user access to the AWS Management Console - optional sau đó nhấn Next. Ở mục Attach policies directly tìm kiếm *AdministratorAccess và chọn sau đó tiếp tục Next. Xem lại các thông tin và nhấn Create user. Nhận tài khoản, mật khẩu, Console sign-in URL (có thể lưu lại) và dùng các thông tin để đăng nhập bằng IAM User. Tạo Access key cho user để có thể đăng nhập bằng CLI. (Chọn User cần tạo, vào mục Access key trong Security credentials)\nĐã cài đặt AWS CLI Link hướng dẫn cài đặt và kiểm tra Install AWS CLI\nCài đặt MobaXTerm Cài đặt Laragon hoặc các phần mềm SQL UI (xampp,\u0026hellip; ) tùy theo cơ sở dữ liệu mình chọn "
 },
 {
-	"uri": "//localhost:1313/vi/2-create-aws-resources/",
+	"uri": "/vi/2-create-aws-resources/",
 	"title": "Tạo các tài nguyên cần thiết",
 	"tags": [],
 	"description": "",
 	"content": "Trong bước này bạn tạo các tài nguyên cần thiết cho bài lab:\nMột là VPC và các tài nguyên liên quan (Subnet, Internet Gateway, Security Group).\nHai là EC2, các package cần thiết và IAM Role cho phép Session Manager quản lý được EC2.\nBa là RDS.\nNội Dung Tạo VPC và các tài nguyên liên quan Khởi tạo EC2 Instance Khởi tạo RDS Kiến trúc tổng quan "
 },
 {
-	"uri": "//localhost:1313/vi/2-create-aws-resources/2-ec2/",
+	"uri": "/vi/2-create-aws-resources/2-ec2/",
 	"title": "Tạo EC2 và IAM Role cho phép Session Manager quản lý",
 	"tags": [],
 	"description": "",
 	"content": "\rPhần này sẽ có 2 bước, đầu tiên là tạo EC2 Intance ở public subnet và cài đặt các package cần thiết, sau đó là tạo IAM Role để gắn vào EC2 cho phép Session Manager có thể quản lý\nTạo EC2 Khởi tạo IAM Role Kiểm tra ở Session Manager Tạo EC2 Trên thanh tìm kiếm tìm EC2 và chọn để vào màn hình quản lý EC2. Sau đó nhấn Launch instances để khởi tạo Thực hiện theo các bước sau để khởi tạo cấu hình cho EC2\nChọn cấu hình OS Khởi tạo keypair để SSH Lưu lại keypair để có thể SSH vào EC2\nCấu hình network cho EC2 EC2 ở public subnet, gắn public security group.\nSau khi làm xong các bước trên thì xem lại thông tin và nhấn Launch intance để khởi tạo. Chi tiết các thông tin của EC2 Dùng MobaXTerm để thử kết nối SSH tới EC2 Instance vừa tạo Cài đặt amazon-ssm-agent bằng câu lệnh\nsudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm\nVì ở lab này chúng ta sẽ tạo Postgres RDS nên sẽ cài đặt postgres client\nsudo dnf install postgresql15.x86_64 -y\nKhởi tạo IAM Role Trong chi tiết của EC2 đã tạo ở trên, chúng ta có thể thấy mục IAM Role vẫn còn trống. Bây giờ chúng ta sẽ tạo IAM Role.\nVào IAM chọn Role, sau đó chọn Create role. Chọn theo hình và nhấn Next. Tiếp tục Next. Đặt tên và xem lại trước khi nhấn Create role. IAM Role cho phép EC2 có thể quản lý bởi Session Manager đã được tạo thành công Quay lại EC2. Nhấn chọn EC2 cần quản lý, sau đó nhấn chuột phải chọn Modify IAM role Chọn Role vừa tạo và nhấn Update IAM role Thay đổi Role cho EC2 thành công Kiểm tra ở Session Manager Ở thanh tìm kiếm gõ Session Manager, nhấn chọn Start session EC2 nếu đã được gắn quyền và cài đặt SSM-Agent thì sẽ hiển thị để cho phép quản lý "
 },
 {
-	"uri": "//localhost:1313/vi/2-create-aws-resources/3-rds/",
+	"uri": "/vi/2-create-aws-resources/3-rds/",
 	"title": "Tạo RDS",
 	"tags": [],
 	"description": "",
 	"content": "\rPhần này chúng ta sẽ khởi tạo Postgre RDS ở private subnet\nCác bước tiến hành Trên thanh tìm kiếm tìm dịch vụ RDS và chọn để vào giao diện dashboard: Chọn Subnets groups ở sidebar và nhấn Create DB subnet group Điền các thông tin cần thiết, chọn VPC và private subnet sau đó nhấn Create Nhớ điền description nếu không sẽ báo lỗi\nTạo thành công DB subnet group 4. Chọn Databases ở sidebar và nhấn Create database để tạo RDS\nThực hiện theo các bước (optional) Nhớ xem kỹ phần tính tiền trước khi tạo\nXem lại thông tin và nhấn Create database: Đợi 1 lúc để RDS có thể tạo thành công, sau đó Lưu lại RDS endpoint để dùng cho kết nối. Đã khởi tạo xong RDS.\n"
 },
 {
-	"uri": "//localhost:1313/vi/3-connect-to-rds/",
+	"uri": "/vi/3-connect-to-rds/",
 	"title": "Kết nối tới RDS từ máy local thông qua EC2",
 	"tags": [],
 	"description": "",
 	"content": "Ở bước này chúng ta sẽ kết nối RDS trên AWS ở máy tính cá nhân (local)\nKiểm tra kết nối từ EC2 tới RDS SSH vào EC2 Instance kiểm tra đã cài đặt ssm-agent, postgres-client Kiểm tra kết nối tới RDS bằng câu lệnh\npsql -h \u0026lt;rds-endpoint\u0026gt; -U \u0026lt;username\u0026gt; --password Sau đó điền password lúc khởi tạo RDS, nếu thành công sẽ có giao diện như sau: Sử dụng cmd/powershell/git bash để đăng nhập vào account AWS bằng Access key (file .pem) đã tạo và lưu ở đầu bài.\nSử dụng Port forward để mở 1 port trên máy local kết nối tới RDS thông qua EC2 bằng câu lệnh:\naws ssm start-session --region \u0026lt;resources-region\u0026gt; target \u0026lt;ec2-instance-id\u0026gt; ^\ndocument-name AWS-StartPortForwardingSessionToRemoteHost parameters host=\u0026quot;\u0026lt;rds-endpoint\u0026gt;\u0026quot;,portNumber=\u0026quot;\u0026lt;rds-port-number\u0026gt;\u0026quot;,localPortNumber=\u0026quot;\u0026lt;local-port-number\u0026gt;\u0026quot; 4 dòng trên là 1 câu lệnh\nCó dòng Waiting to connect chứng tỏ rds đã sẵn sàng để kết nối. 1 số terminal không hiện dòng Waiting to connect, nhưng connect vào vẫn được\nMở Laragon và chọn/điền các thông tin để kết nối tới RDS. Sau đó nhấn Open\nLaragon dashboard Các thông tin cài đặt User và Password là các thông tin đã điền khi khởi tạo RDS Port là local port đã mở để kết nối\nỞ terminal thông báo kết nối thành công tới RDS từ máy tính Local. Một giao diện sẽ hiển thị sau khi thành công, chúng ta có thể query từ giao diện này. Chúng ta đã hoàn thành bài lab kết nối RDS từ máy tính local thông qua EC2 và Session Manager\n"
 },
 {
-	"uri": "//localhost:1313/vi/4-clean-resources/",
+	"uri": "/vi/4-clean-resources/",
 	"title": "Dọn dẹp tài nguyên",
 	"tags": [],
 	"description": "",
 	"content": " Xóa RDS Xóa EC2 Xóa VPC Xóa RDS Vào RDS, chọn RDS cần xóa, chọn Actions sau đó chọn Delete Đợi 1 lúc để RDS xóa hoàn toàn Xóa EC2 Vào EC2, chọn EC2 cần xóa, chọn Instance state sau đó chọn Terminate (delete) instance 2. Đợi 1 lúc để EC2 xóa hoàn toàn\nXóa VPC Vào VPC, chọn VPC cần xóa, chọn Actions sau đó chọn Delete VPC Nếu chưa thể xóa do vẫn còn các tài nguyên phụ thuộc, hãy xóa các tài nguyên phụ thuộc trước sau đó xóa VPC\n"
 },
 {
-	"uri": "//localhost:1313/vi/",
+	"uri": "/vi/",
 	"title": "Kết nối RDS từ máy tính local thông qua EC2 với Session Manager",
 	"tags": [],
 	"description": "",
 	"content": "Kết nối RDS thông qua EC2 Tổng quan Trong bài lab này, bạn sẽ kết nối được RDS trong private subnet thông qua EC2 instance ở public subnet bằng Session Manager\nRDS (Relational Database Service) RDS là một dịch vụ cơ sở dữ liệu quan hệ được quản lý của AWS. Nó giúp bạn thiết lập, vận hành và mở rộng các cơ sở dữ liệu quan hệ trên đám mây một cách dễ dàng.\nVới RDS, bạn có thể sử dụng các hệ quản trị cơ sở dữ liệu phổ biến như MySQL, PostgreSQL, MariaDB, Oracle Database, và Microsoft SQL Server.\nEC2 (Elastic Compute Cloud) EC2 là một dịch vụ điện toán đám mây của AWS, cho phép bạn tạo và quản lý các máy chủ ảo (instances) trên đám mây. Với EC2, bạn có thể dễ dàng mở rộng hoặc giảm tải các tài nguyên máy tính theo nhu cầu, mà không cần đầu tư vào phần cứng thực tế.\nSession Manager Session Manager là một công cụ quản lý phiên làm việc trong AWS Systems Manager, cho phép bạn quản lý và truy cập các instance EC2 từ xa mà không cần mở cổng SSH hoặc RDP\nSession Manager là một giải pháp an toàn và hiệu quả để quản lý các instance trong môi trường AWS.\nNội dung chính Yêu cầu Tạo các tài nguyên AWS Kết nối tới RDS Dọn dẹp tài nguyên "
 },
 {
-	"uri": "//localhost:1313/vi/categories/",
+	"uri": "/vi/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/vi/tags/",
+	"uri": "/vi/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
