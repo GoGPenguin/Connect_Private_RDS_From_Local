@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connect to RDS from Local Machine through EC2 on Connecting to RDS via EC2 with Session Manager</title>
+    <link>//localhost:1313/3-connect-to-rds/</link>
+    <description>Recent content in Connect to RDS from Local Machine through EC2 on Connecting to RDS via EC2 with Session Manager</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/3-connect-to-rds/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-learn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "workshop"
+  # Git hub repo link
+  editURL = ""
+  description = ""
+  author = "son72ltv2@gmail.com"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  
+[Languages]
+[Languages.en]
+title = "Connecting to RDS via EC2 with Session Manager"
+weight = 1
+languageName = "English"
+
+
+[Languages.vi]
+title = "Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager"
+weight = 2
+languageName = "Tiếng Việt"
+

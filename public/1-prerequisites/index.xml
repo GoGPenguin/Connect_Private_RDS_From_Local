@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prerequisites on Connecting to RDS via EC2 with Session Manager</title>
+    <link>//localhost:1313/1-prerequisites/</link>
+    <description>Recent content in Prerequisites on Connecting to RDS via EC2 with Session Manager</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/1-prerequisites/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
