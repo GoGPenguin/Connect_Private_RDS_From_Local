@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tạo RDS on Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
+    <title>Tạo các tài nguyên cần thiết on Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
     <link>/vi/2-create-aws-resources/</link>
-    <description>Recent content in Tạo RDS on Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</description>
+    <description>Recent content in Tạo các tài nguyên cần thiết on Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>

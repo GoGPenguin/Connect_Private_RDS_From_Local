@@ -14,6 +14,13 @@
 	"content": "Nội dung:\nCó tài khoản AWS Sử dụng IAM Account để làm lab (Nên làm) Đã cài đặt AWS CLI Cài đặt MobaXTerm Cài đặt Laragon hoặc các phần mềm SQL UI (xampp,\u0026hellip; ) tùy theo cơ sở dữ liệu mình chọn Có tài khoản AWS Đi đến trang Amazon Web Service homepage. Chọn Sign In to the Console ở góc trên bên phải. Ghi Chú: Có thể là Create an AWS Account. Nhập thông tin tài khoảng và chọn Continue. Quan Trọng: Hãy chắc chắn bạn nhập đúng thông tin, đặc biệt là email. Chọn loại account. Ghi chú: Personal và Professional đều có chung tính năng. Nhập thông tin công ty hoặc thông tin cá nhân của bạn. Đọc và đồng ý AWS Customer Agreement. Chọn Create Account và Continue. Sử dụng IAM Account để làm lab (Nên làm) Nếu đã dùng IAM Account thì có thể bỏ qua bước này\nTrong thanh tìm kiếm gõ IAM và chọn IAM sau đó chọn vào Users. Nếu chưa tồn tại User thì chọn Create user Điền thông tin , chọn ô Provide user access to the AWS Management Console - optional sau đó nhấn Next. Ở mục Attach policies directly tìm kiếm *AdministratorAccess và chọn sau đó tiếp tục Next. Xem lại các thông tin và nhấn Create user. Nhận tài khoản, mật khẩu, Console sign-in URL (có thể lưu lại) và dùng các thông tin để đăng nhập bằng IAM User. Tạo Access key cho user để có thể đăng nhập bằng CLI. (Chọn User cần tạo, vào mục Access key trong Security credentials)\nĐã cài đặt AWS CLI Link hướng dẫn cài đặt và kiểm tra Install AWS CLI\nCài đặt MobaXTerm Cài đặt Laragon hoặc các phần mềm SQL UI (xampp,\u0026hellip; ) tùy theo cơ sở dữ liệu mình chọn "
 },
 {
+	"uri": "/vi/2-create-aws-resources/",
+	"title": "Tạo các tài nguyên cần thiết",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này bạn tạo các tài nguyên cần thiết cho bài lab:\nMột là VPC và các tài nguyên liên quan (Subnet, Internet Gateway, Security Group).\nHai là EC2, các package cần thiết và IAM Role cho phép Session Manager quản lý được EC2.\nBa là RDS.\nNội Dung Tạo VPC và các tài nguyên liên quan Khởi tạo EC2 Instance Khởi tạo RDS Kiến trúc tổng quan "
+},
+{
 	"uri": "/vi/2-create-aws-resources/2-ec2/",
 	"title": "Tạo EC2 và IAM Role cho phép Session Manager quản lý",
 	"tags": [],
@@ -22,13 +29,6 @@
 },
 {
 	"uri": "/vi/2-create-aws-resources/3-rds/",
-	"title": "Tạo RDS",
-	"tags": [],
-	"description": "",
-	"content": "\rPhần này chúng ta sẽ khởi tạo Postgre RDS ở private subnet\nCác bước tiến hành Trên thanh tìm kiếm tìm dịch vụ RDS và chọn để vào giao diện dashboard: Chọn Subnets groups ở sidebar và nhấn Create DB subnet group Điền các thông tin cần thiết, chọn VPC và private subnet sau đó nhấn Create Nhớ điền description nếu không sẽ báo lỗi\nTạo thành công DB subnet group 4. Chọn Databases ở sidebar và nhấn Create database để tạo RDS\nThực hiện theo các bước (optional) Nhớ xem kỹ phần tính tiền trước khi tạo\nXem lại thông tin và nhấn Create database: Đợi 1 lúc để RDS có thể tạo thành công, sau đó Lưu lại RDS endpoint để dùng cho kết nối. Đã khởi tạo xong RDS.\n"
-},
-{
-	"uri": "/vi/2-create-aws-resources/",
 	"title": "Tạo RDS",
 	"tags": [],
 	"description": "",

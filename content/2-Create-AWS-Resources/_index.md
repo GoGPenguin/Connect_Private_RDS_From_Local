@@ -1,42 +1,22 @@
 +++
-title = "Create RDS"
+title = "Create Necessary Resources"
 date = 2024
 weight = 2
 chapter = false
-pre = "<b>2.3. </b>"
+pre = "<b>2. </b>"
 +++
 
-{{% notice note %}}
-In this section, we will create a PostgreSQL RDS in the private subnet.
-{{% /notice %}}
+In this step, you will create the necessary resources for the lab.  
+First, you will create a **VPC** and related resources (Subnet, Internet Gateway, Security Group).  
+Second, you will create an **EC2** instance, install necessary packages, and assign an IAM Role that allows Session Manager to manage the EC2 instance.  
+Third, you will set up the **RDS** service.
 
-#### Steps to Follow
+#### Content
 
-1. In the search bar, type **RDS** and select it to access the dashboard:
-   ![DB SG](../../../images/3-RDS/rds_console.jpg)
-2. Select Subnet Groups from the sidebar and click **Create DB subnet group**.
-   ![DB SG](../../../images/3-RDS/rds_subnet_gr.jpg)
-3. Fill in the necessary details, select the VPC and **private subnet**, then click **Create**.
-   ![DB SG](../../../images/3-RDS/rds_subnet_gr_create.jpg)
+1. [Create VPC and Related Resources](1-VPC-And-More)
+2. [Launch EC2 Instance](2-EC2)
+3. [Set Up RDS](3-RDS)
 
-{{% notice note %}}
-Remember to fill in the description; otherwise, you'll get an error.
-{{% /notice %}}
-The DB subnet group is created successfully.
-![DB SG](../../../images/3-RDS/rds_subnet_gr_success.jpg) 4. Select **Databases** from the sidebar and click **Create database** to create the RDS instance.  
-_Proceed with the steps (optional):_
-![DB SG](../../../images/3-RDS/db_console.jpg)
-![DB SG](../../../images/3-RDS/db_engine_opt.jpg)
-![DB SG](../../../images/3-RDS/db_general_setting.jpg)
-![DB SG](../../../images/3-RDS/db_default_1.jpg)
-![DB SG](../../../images/3-RDS/db_connect_setting_01.jpg)
-![DB SG](../../../images/3-RDS/db_connect_setting_02.jpg)
-{{% notice warning %}}
-Be sure to review the cost details before creating the RDS instance.
-{{% /notice %}}
-![DB SG](../../../images/3-RDS/costs.jpg)
-Review the information and click **Create database**:
-Wait a moment for the RDS instance to be created successfully, then **Save the RDS endpoint** for use in the connection.
-![DB SG](../../../images/3-RDS/rds_waiting_create.jpg)
-![DB SG](../../../images/3-RDS/rds_endpoint.jpg)
-RDS has been successfully created.
+#### Infrastructure
+
+![Image](../images/WorkShop_000001_Infra.drawio.png)
