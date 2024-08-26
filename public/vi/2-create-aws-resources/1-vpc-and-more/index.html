@@ -12,21 +12,21 @@
     <title>Tạo VPC và các tài nguyên liên quan :: Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724676553" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724676553" rel="stylesheet">
-    <link href="/css/hybrid.css?1724676553" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724676553" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724676553" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724676553" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724676553" rel="stylesheet">
-    <link href="/css/theme.css?1724676553" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724676553" rel="stylesheet">
+    <link href="/css/nucleus.css?1724684612" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724684612" rel="stylesheet">
+    <link href="/css/hybrid.css?1724684612" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724684612" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724684612" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724684612" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724684612" rel="stylesheet">
+    <link href="/css/theme.css?1724684612" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724684612" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724676553" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724684612" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724676553"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724684612"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724676553"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724676553"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724684612"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724684612"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724676553"></script>
+<script type="text/javascript" src="/js/search.js?1724684612"></script>
 
     
   </div>
@@ -464,28 +464,28 @@
 <ol>
 <li>
 <p>Tìm kiếm VPC trên thanh tìm kiếm và chọn vào dịch vụ <strong>VPC</strong>. Màn hình VPC Dashboard:
-<img alt="VPC Dashboard" src="/images/1-VPC-And-More/vpc_console.jpg?width=1200px"></p>
+<img alt="VPC Dashboard" src="../../images/1-VPC-And-More/vpc_console.jpg?width=1200px"></p>
 </li>
 <li>
 <p>Chọn <strong>Your VPCs</strong> để vào màn hình quản lý các VPCs:<br>
 <em>Hiện tại chưa có VPC nào được tạo</em><br>
 Nhấn chọn <strong>Create VPC</strong>
-<img alt="VPC Manage" src="/images/1-VPC-And-More/vpc_dashboard.jpg?width=1200px"></p>
+<img alt="VPC Manage" src="../../images/1-VPC-And-More/vpc_dashboard.jpg?width=1200px"></p>
 </li>
 <li>
 <p>Chọn VPC Only và điền các thông tin như hình, sau đó chọn <strong>Create VPC</strong>
-<img alt="VPC Manage" src="/images/1-VPC-And-More/vpc_create.jpg?width=1000px"></p>
+<img alt="VPC Manage" src="../../images/1-VPC-And-More/vpc_create.jpg?width=1000px"></p>
 </li>
 </ol>
 <p>Ra ngoài giao diện các bạn sẽ thấy đã tạo VPC thành công</p>
 <h4 id="tạo-subnets">Tạo Subnets</h4>
 <ol>
 <li>Chọn mục <strong>Subnets</strong> ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn <strong>Create subnet</strong>:
-<img alt="Subnets Manage" src="/images/1-VPC-And-More/subnet_console.jpg?width=1400px"></li>
+<img alt="Subnets Manage" src="../../images/1-VPC-And-More/subnet_console.jpg?width=1400px"></li>
 <li>Chọn VPC và điền/chọn các thông tin cần thiết (name, AZ, CIDR block):</li>
 </ol>
-<p><em><strong>Ví dụ thông tin của 1 public subnet ở AZ ap-southeast-1a</strong></em>
-<img alt="Subnets Manage" src="/images/1-VPC-And-More/subnet_01.jpg?width=1400px"></p>
+<p><strong><em>Ví dụ thông tin của 1 public subnet ở AZ ap-southeast-1a</em></strong>
+<img alt="Subnets Manage" src="../../images/1-VPC-And-More/subnet_01.jpg?width=1400px"></p>
 
 <div class="notices note" ><p>Các subnet sau thay đổi thông tin của AZ (<strong>có thể tùy chỉnh</strong>), ví dụ:<br>
 <strong>Name:</strong> public_subnet_2, <strong>AZ:</strong> ap-southeast-1b, <strong>CIDR:</strong> 10.0.1.0/24<br>
@@ -501,33 +501,33 @@ Nhấn chọn <strong>Create VPC</strong>
 
 <ol>
 <li>Chọn mục <strong>Internet gateways</strong> ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn <strong>Create internet gateway</strong>:
-<img alt="IGW Console" src="/images/1-VPC-And-More/igw_console.jpg?width=1400px"></li>
+<img alt="IGW Console" src="../../images/1-VPC-And-More/igw_console.jpg?width=1400px"></li>
 <li>Đặt tên và nhấn <strong>Create internet gateway</strong> sẽ tạo thành công:
-<img alt="IGW Console" src="/images/1-VPC-And-More/create_igw.jpg?width=1400px"></li>
+<img alt="IGW Console" src="../../images/1-VPC-And-More/create_igw.jpg?width=1400px"></li>
 <li>Xem thông tin về IGW vừa tạo, nhấn <strong>Attach to VPC</strong> để gắn IGW vừa tạo vào VPC đã tạo trước đó:
-<img alt="IGW Console" src="/images/1-VPC-And-More/igw_detail.jpg?width=1400px">
-<img alt="IGW Console" src="/images/1-VPC-And-More/attach_igw_to_vpc.jpg?width=1400px">
+<img alt="IGW Console" src="../../images/1-VPC-And-More/igw_detail.jpg?width=1400px">
+<img alt="IGW Console" src="../../images/1-VPC-And-More/attach_igw_to_vpc.jpg?width=1400px">
 Nhấn <strong>Attach internet gateway</strong> sẽ gắn thành công vào VPC.</li>
 </ol>
 <h4 id="tạo-security-groups">Tạo Security Groups</h4>
 <ol>
 <li>Tiếp tục chọn <strong>Security groups</strong> ở sidebar để vào màn hình quản lý Security group, sau đó nhấn chọn Create security group:
-<img alt="SG Console" src="/images/1-VPC-And-More/sgs_console.jpg?width=1400px"></li>
+<img alt="SG Console" src="../../images/1-VPC-And-More/sgs_console.jpg?width=1400px"></li>
 <li>Đặt tên, chọn VPC đã tạo và tạo inbound rules của <em>Public Security Group</em> cho Public Subnet:
-<img alt="SG Console" src="/images/1-VPC-And-More/public_sgs_detail.jpg?width=1400px"></li>
+<img alt="SG Console" src="../../images/1-VPC-And-More/public_sgs_detail.jpg?width=1400px"></li>
 <li>Tương tự, chỉ thay đổi inbounds rules với <em>Private Security Group</em> cho Private Subnet:
-<img alt="SG Console" src="/images/1-VPC-And-More/private_sgs_detail.jpg?width=1400px"></li>
+<img alt="SG Console" src="../../images/1-VPC-And-More/private_sgs_detail.jpg?width=1400px"></li>
 </ol>
 <h4 id="tạo-route-table">Tạo Route Table</h4>
 <ol>
 <li>Chọn mục <strong>Route tables</strong> ở sidebar VPC Dashboard, để vào màn hình quản lý subnets và chọn <strong>Create route table</strong>:
-<img alt="Route table Manage" src="/images/1-VPC-And-More/route_table_console.jpg?width=1400px"></li>
+<img alt="Route table Manage" src="../../images/1-VPC-And-More/route_table_console.jpg?width=1400px"></li>
 <li>Tạo Public route table:
-<img alt="Route table Manage" src="/images/1-VPC-And-More/create_public_route.jpg?width=1400px">
+<img alt="Route table Manage" src="../../images/1-VPC-And-More/create_public_route.jpg?width=1400px">
 Nhấn <strong>Create route table</strong>
-<img alt="Route table Manage" src="/images/1-VPC-And-More/public_route_detail.jpg?width=1400px">
+<img alt="Route table Manage" src="../../images/1-VPC-And-More/public_route_detail.jpg?width=1400px">
 Chỉnh sửa public route để có thể định tuyến ra internet (Chọn route table cần chỉnh sửa và chọn mục <strong>Routes</strong>)<br>
-<img alt="Route table Manage" src="/images/1-VPC-And-More/public_route_igw.jpg?width=1400px">
+<img alt="Route table Manage" src="../../images/1-VPC-And-More/public_route_igw.jpg?width=1400px">
 Nhấn <strong>Save changes</strong>.</li>
 </ol>
 
@@ -713,19 +713,19 @@ Nhấn <strong>Save changes</strong>.</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724676553"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724676553"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724676553"></script>
-    <script src="/js/jquery.sticky.js?1724676553"></script>
-    <script src="/js/featherlight.min.js?1724676553"></script>
-    <script src="/js/highlight.pack.js?1724676553"></script>
+    <script src="/js/clipboard.min.js?1724684612"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724684612"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724684612"></script>
+    <script src="/js/jquery.sticky.js?1724684612"></script>
+    <script src="/js/featherlight.min.js?1724684612"></script>
+    <script src="/js/highlight.pack.js?1724684612"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724676553"></script>
-    <script src="/js/learn.js?1724676553"></script>
-    <script src="/js/hugo-learn.js?1724676553"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724684612"></script>
+    <script src="/js/learn.js?1724684612"></script>
+    <script src="/js/hugo-learn.js?1724684612"></script>
 
-    <link href="/mermaid/mermaid.css?1724676553" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724676553"></script>
+    <link href="/mermaid/mermaid.css?1724684612" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724684612"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
