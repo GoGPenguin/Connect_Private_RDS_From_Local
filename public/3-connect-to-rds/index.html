@@ -12,21 +12,21 @@
     <title>Connect to RDS from Local Machine through EC2 :: Connecting to RDS via EC2 with Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724690809" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724690809" rel="stylesheet">
-    <link href="/css/hybrid.css?1724690809" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724690809" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724690809" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724690809" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724690809" rel="stylesheet">
-    <link href="/css/theme.css?1724690809" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724690809" rel="stylesheet">
+    <link href="/css/nucleus.css?1724691196" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724691196" rel="stylesheet">
+    <link href="/css/hybrid.css?1724691196" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724691196" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724691196" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724691196" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724691196" rel="stylesheet">
+    <link href="/css/theme.css?1724691196" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724691196" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724690809" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724691196" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724690809"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724691196"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724690809"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724690809"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724691196"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724691196"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724690809"></script>
+<script type="text/javascript" src="/js/search.js?1724691196"></script>
 
     
   </div>
@@ -435,12 +435,12 @@
 <li>
 <p>Verify the connection from EC2 to RDS:</p>
 <ul>
-<li>SSH into the EC2 instance and check if <code>ssm-agent</code> and <code>postgres-client</code> are installed.
-<img alt="DB SG" src="../../images/4-Connect-RDS/amazon-ssm-agent_success.jpg"></li>
+<li>SSH into the EC2 instance and check if ssm-agent and postgres-client are installed.
+<img alt="DB SG" src="../images/4-Connect-RDS/amazon-ssm-agent_success.jpg"></li>
 <li>Test the connection to RDS using the command:<br>
 <code>psql -h &lt;rds-endpoint&gt; -U &lt;username&gt; --password</code></li>
 <li>Enter the password set during RDS creation. If successful, you will see the following screen:
-<img alt="DB SG" src="../../images/4-Connect-RDS/rds_connect_ec2.jpg"></li>
+<img alt="DB SG" src="../images/4-Connect-RDS/rds_connect_ec2.jpg"></li>
 </ul>
 </li>
 <li>
@@ -456,7 +456,7 @@
 <div class="notices warning" ><p>The four lines above form a single command.</p>
 </div>
 
-<img alt="DB SG" src="../../images/4-Connect-RDS/sso_rds.jpg">
+<img alt="DB SG" src="../images/4-Connect-RDS/sso_rds.jpg">
 Seeing <strong>Waiting to connect</strong> indicates that the RDS is ready to connect.
 
 <div class="notices info" ><p>Some terminals may not show <strong>Waiting to connect</strong>, but the connection can still be successful.</p>
@@ -467,9 +467,9 @@ Seeing <strong>Waiting to connect</strong> indicates that the RDS is ready to co
 <p>Open Laragon and select/enter the information to connect to the RDS. Then click Open.</p>
 <ul>
 <li>Laragon dashboard:
-<img alt="DB SG" src="../../images/4-Connect-RDS/laragon_console.jpg"></li>
+<img alt="DB SG" src="../images/4-Connect-RDS/laragon_console.jpg"></li>
 <li>Connection settings:
-<img alt="DB SG" src="../../images/4-Connect-RDS/laragon_db_detail.jpg">
+<img alt="DB SG" src="../images/4-Connect-RDS/laragon_db_detail.jpg">
 
 <div class="notices note" ><pre><code> The username and password are the credentials used when creating the RDS.  
  The port is the local port that was opened for the connection.
@@ -480,11 +480,11 @@ Seeing <strong>Waiting to connect</strong> indicates that the RDS is ready to co
 </li>
 <li>
 <p>The terminal will display a successful connection to the RDS from the local machine.
-<img alt="DB SG" src="../../images/4-Connect-RDS/connect_success_cli.jpg"></p>
+<img alt="DB SG" src="../images/4-Connect-RDS/connect_success_cli.jpg"></p>
 </li>
 <li>
 <p>A user interface will appear upon success, allowing you to run queries.
-<img alt="DB SG" src="../../images/4-Connect-RDS/connect_success.jpg"></p>
+<img alt="DB SG" src="../images/4-Connect-RDS/connect_success.jpg"></p>
 </li>
 </ol>
 <p>We have now completed the lab to connect to RDS from a local machine via EC2 and Session Manager.</p>
@@ -666,19 +666,19 @@ Seeing <strong>Waiting to connect</strong> indicates that the RDS is ready to co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724690809"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724690809"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724690809"></script>
-    <script src="/js/jquery.sticky.js?1724690809"></script>
-    <script src="/js/featherlight.min.js?1724690809"></script>
-    <script src="/js/highlight.pack.js?1724690809"></script>
+    <script src="/js/clipboard.min.js?1724691196"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724691196"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724691196"></script>
+    <script src="/js/jquery.sticky.js?1724691196"></script>
+    <script src="/js/featherlight.min.js?1724691196"></script>
+    <script src="/js/highlight.pack.js?1724691196"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724690809"></script>
-    <script src="/js/learn.js?1724690809"></script>
-    <script src="/js/hugo-learn.js?1724690809"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724691196"></script>
+    <script src="/js/learn.js?1724691196"></script>
+    <script src="/js/hugo-learn.js?1724691196"></script>
 
-    <link href="/mermaid/mermaid.css?1724690809" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724690809"></script>
+    <link href="/mermaid/mermaid.css?1724691196" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724691196"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

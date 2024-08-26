@@ -12,21 +12,21 @@
     <title>Kết nối tới RDS từ máy local thông qua EC2 :: Kết nối tới RDS từ máy tính local thông qua EC2 với Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724690809" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724690809" rel="stylesheet">
-    <link href="/css/hybrid.css?1724690809" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724690809" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724690809" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724690809" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724690809" rel="stylesheet">
-    <link href="/css/theme.css?1724690809" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724690809" rel="stylesheet">
+    <link href="/css/nucleus.css?1724691196" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724691196" rel="stylesheet">
+    <link href="/css/hybrid.css?1724691196" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724691196" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724691196" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724691196" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724691196" rel="stylesheet">
+    <link href="/css/theme.css?1724691196" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724691196" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724690809" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724691196" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724690809"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724691196"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724690809"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724690809"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724691196"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724691196"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724690809"></script>
+<script type="text/javascript" src="/js/search.js?1724691196"></script>
 
     
   </div>
@@ -436,11 +436,11 @@
 </ol>
 <ul>
 <li>SSH vào EC2 Instance kiểm tra đã cài đặt ssm-agent, postgres-client
-<img alt="DB SG" src="../../../images/4-Connect-RDS/amazon-ssm-agent_success.jpg"></li>
+<img alt="DB SG" src="../../images/4-Connect-RDS/amazon-ssm-agent_success.jpg"></li>
 <li>Kiểm tra kết nối tới RDS bằng câu lệnh<br>
 <code>psql -h &lt;rds-endpoint&gt; -U &lt;username&gt; --password</code></li>
 <li>Sau đó điền password lúc khởi tạo RDS, nếu thành công sẽ có giao diện như sau:
-<img alt="DB SG" src="../../../images/4-Connect-RDS/rds_connect_ec2.jpg"></li>
+<img alt="DB SG" src="../../images/4-Connect-RDS/rds_connect_ec2.jpg"></li>
 </ul>
 <ol start="2">
 <li>
@@ -456,7 +456,7 @@
 <div class="notices warning" ><p>4 dòng trên là 1 câu lệnh</p>
 </div>
 
-<img alt="DB SG" src="../../../images/4-Connect-RDS/sso_rds.jpg">
+<img alt="DB SG" src="../../images/4-Connect-RDS/sso_rds.jpg">
 Có dòng <strong>Waiting to connect</strong> chứng tỏ rds đã sẵn sàng để kết nối.
 
 <div class="notices info" ><p>1 số terminal không hiện dòng <strong>Waiting to connect</strong>, nhưng connect vào vẫn được</p>
@@ -469,9 +469,9 @@ Có dòng <strong>Waiting to connect</strong> chứng tỏ rds đã sẵn sàng 
 </ol>
 <ul>
 <li>Laragon dashboard
-<img alt="DB SG" src="../../../images/4-Connect-RDS/laragon_console.jpg"></li>
+<img alt="DB SG" src="../../images/4-Connect-RDS/laragon_console.jpg"></li>
 <li>Các thông tin cài đặt
-<img alt="DB SG" src="../../../images/4-Connect-RDS/laragon_db_detail.jpg">
+<img alt="DB SG" src="../../images/4-Connect-RDS/laragon_db_detail.jpg">
 
 <div class="notices note" ><p>User và Password là các thông tin đã điền khi khởi tạo RDS
 Port là local port đã mở để kết nối</p>
@@ -480,9 +480,9 @@ Port là local port đã mở để kết nối</p>
 </ul>
 <ol start="5">
 <li>Ở terminal thông báo kết nối thành công tới RDS từ máy tính Local.
-<img alt="DB SG" src="../../../images/4-Connect-RDS/connect_success_cli.jpg"></li>
+<img alt="DB SG" src="../../images/4-Connect-RDS/connect_success_cli.jpg"></li>
 <li>Một giao diện sẽ hiển thị sau khi thành công, chúng ta có thể query từ giao diện này.
-<img alt="DB SG" src="../../../images/4-Connect-RDS/connect_success.jpg"></li>
+<img alt="DB SG" src="../../images/4-Connect-RDS/connect_success.jpg"></li>
 </ol>
 <p>Chúng ta đã hoàn thành bài lab kết nối RDS từ máy tính local thông qua EC2 và Session Manager</p>
 
@@ -663,19 +663,19 @@ Port là local port đã mở để kết nối</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724690809"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724690809"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724690809"></script>
-    <script src="/js/jquery.sticky.js?1724690809"></script>
-    <script src="/js/featherlight.min.js?1724690809"></script>
-    <script src="/js/highlight.pack.js?1724690809"></script>
+    <script src="/js/clipboard.min.js?1724691196"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724691196"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724691196"></script>
+    <script src="/js/jquery.sticky.js?1724691196"></script>
+    <script src="/js/featherlight.min.js?1724691196"></script>
+    <script src="/js/highlight.pack.js?1724691196"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724690809"></script>
-    <script src="/js/learn.js?1724690809"></script>
-    <script src="/js/hugo-learn.js?1724690809"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724691196"></script>
+    <script src="/js/learn.js?1724691196"></script>
+    <script src="/js/hugo-learn.js?1724691196"></script>
 
-    <link href="/mermaid/mermaid.css?1724690809" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724690809"></script>
+    <link href="/mermaid/mermaid.css?1724691196" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724691196"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
