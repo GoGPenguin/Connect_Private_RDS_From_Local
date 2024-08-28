@@ -30,6 +30,7 @@ This section involves two steps: first, creating an **EC2** instance in the publ
    ![EC2 Dashboard](../../images/2-EC2/ec2_network_setting.jpg)
    {{% notice note %}}
    The EC2 instance is in the public subnet, with the public security group attached.
+   Auto-assign public IP choose Enable to allocate Public IP for EC2 instance.
    {{% /notice %}}
 
 After completing the steps above, review the information and click **Launch instance** to create it.

@@ -30,6 +30,7 @@ Phần này sẽ có 2 bước, đầu tiên là tạo **EC2** Intance ở publi
    ![EC2 Dashboard](../../../images/2-EC2/ec2_network_setting.jpg)
    {{% notice note %}}
    EC2 ở public subnet, gắn public security group.
+   Auto-assign public IP chọn Enable để cấp Public IP cho EC2.
    {{% /notice %}}
 
 Sau khi làm xong các bước trên thì xem lại thông tin và nhấn **Launch intance** để khởi tạo.
