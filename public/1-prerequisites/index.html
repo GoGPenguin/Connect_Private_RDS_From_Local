@@ -12,21 +12,21 @@
     <title>Prerequisites :: Connecting to RDS via EC2 with Session Manager</title>
 
     
-    <link href="/css/nucleus.css?1724828105" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724828105" rel="stylesheet">
-    <link href="/css/hybrid.css?1724828105" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724828105" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724828105" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724828105" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724828105" rel="stylesheet">
-    <link href="/css/theme.css?1724828105" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724828105" rel="stylesheet">
+    <link href="/css/nucleus.css?1724853014" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724853014" rel="stylesheet">
+    <link href="/css/hybrid.css?1724853014" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724853014" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724853014" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724853014" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724853014" rel="stylesheet">
+    <link href="/css/theme.css?1724853014" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724853014" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724828105" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724853014" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724828105"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724853014"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724828105"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724828105"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724853014"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724853014"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724828105"></script>
+<script type="text/javascript" src="/js/search.js?1724853014"></script>
 
     
   </div>
@@ -445,23 +445,24 @@
 <li><a href="/1-prerequisites/#aws-cli-installed">AWS CLI Installed</a></li>
 <li><a href="/1-prerequisites/#mobaxterm-installed">MobaXTerm Installed</a></li>
 <li><a href="/1-prerequisites/#install-laragon-or-other-sql-ui-software-xampp-etc-depending-on-the-database-you-choose">Install Laragon or other SQL UI software (XAMPP, etc.) depending on the database you choose</a></li>
+<li><a href="/1-prerequisites/#session-manager-plugin-installed">Session Manager Plugin Installed</a></li>
 </ul>
 <h4 id="have-an-aws-account">Have an AWS Account</h4>
 <ol>
 <li>Go to the <a href="https://aws.amazon.com/">Amazon Web Service homepage</a>.</li>
 <li>Click on <strong>Sign In to the Console</strong> at the top right corner.
 <ul>
-<li><em><strong>Note:</strong> You may need to click <strong>Create an AWS Account</strong> instead.</em></li>
+<li><strong>*Note:</strong> You may need to click <strong>Create an AWS Account</strong> instead.*</li>
 </ul>
 </li>
 <li>Enter your account information and select <strong>Continue</strong>.
 <ul>
-<li><em><strong>Important</strong>: Make sure to enter accurate information, especially your email address.</em></li>
+<li><strong>*Important</strong>: Make sure to enter accurate information, especially your email address.*</li>
 </ul>
 </li>
 <li>Choose your account type.
 <ul>
-<li><em><strong>Note</strong>: Both Personal and Professional accounts have the same features.</em></li>
+<li><strong>*Note</strong>: Both Personal and Professional accounts have the same features.*</li>
 </ul>
 </li>
 <li>Enter your company or personal information.</li>
@@ -477,7 +478,7 @@
 <li>In the search bar, type <strong>IAM</strong> and select <strong>IAM</strong>, then go to Users.</li>
 <li>If the User does not exist, select <strong>Create user</strong>.</li>
 <li>Enter the information, check the box <strong>Provide user access to the AWS Management Console - optional</strong>, and then click <strong>Next</strong>.</li>
-<li>In the <strong>Attach policies directly</strong> section, search for *<strong>AdministratorAccess</strong> and select it, then continue with <strong>Next</strong>.</li>
+<li>In the <strong>Attach policies directly</strong> section, search for <strong>*AdministratorAccess</strong> and select it, then continue with <strong>Next</strong>.</li>
 <li>Review the information and click <strong>Create user</strong>.</li>
 <li>Obtain the account details, password, and Console sign-in URL (you may save this information) and use these credentials to log in with the IAM User.</li>
 </ul>
@@ -489,6 +490,8 @@
 <p>Installation and setup guide: <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Install AWS CLI</a></p>
 <h4 id="mobaxterm-installed">MobaXTerm Installed</h4>
 <h4 id="install-laragon-or-other-sql-ui-software-xampp-etc-depending-on-the-database-you-choose">Install Laragon or other SQL UI software (XAMPP, etc.) depending on the database you choose</h4>
+<h4 id="session-manager-plugin-installed">Session Manager Plugin Installed</h4>
+<p>Installation and setup guide: <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Session Manager Plugin</a></p>
 
 
 
@@ -664,19 +667,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724828105"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724828105"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724828105"></script>
-    <script src="/js/jquery.sticky.js?1724828105"></script>
-    <script src="/js/featherlight.min.js?1724828105"></script>
-    <script src="/js/highlight.pack.js?1724828105"></script>
+    <script src="/js/clipboard.min.js?1724853014"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724853014"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724853014"></script>
+    <script src="/js/jquery.sticky.js?1724853014"></script>
+    <script src="/js/featherlight.min.js?1724853014"></script>
+    <script src="/js/highlight.pack.js?1724853014"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724828105"></script>
-    <script src="/js/learn.js?1724828105"></script>
-    <script src="/js/hugo-learn.js?1724828105"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724853014"></script>
+    <script src="/js/learn.js?1724853014"></script>
+    <script src="/js/hugo-learn.js?1724853014"></script>
 
-    <link href="/mermaid/mermaid.css?1724828105" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724828105"></script>
+    <link href="/mermaid/mermaid.css?1724853014" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724853014"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
